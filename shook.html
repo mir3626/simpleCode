@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#shook").on("click", function () {
+                shook();
+            });
+        });
+
+        function shook() {
+
+            const count = Math.floor(Math.random() * 100);
+            const arr = ["슈숙.", "슉.", "시.", "시발럼아.", "시발롬아.", "슈슉."];
+            let result = [];
+            let i = 0;
+
+            while (i < count) {
+                let target = arr[Math.floor(Math.random() * arr.length)];
+                result.push(target);
+                i++;
+            }
+
+            $("#times").text(count + "번 ");
+            $("#result").text(result.join(" "));
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input id="shook" type="button" value="슈숙. 슈슉.">
+        <br><br>
+        <span id="times"></span>슈숙. 슈슉.
+        <br><br>
+        <span id="result" style="word-break:break-all;"></span>
+    </div>
+</body>
+</html>
